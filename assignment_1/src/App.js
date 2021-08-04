@@ -13,15 +13,6 @@ state = ({
   ]
   }); 
 
-changeUserNameHandler = (newUserName) => {
-  this.setState({
-    userNames:[
-      {userName: newUserName}, 
-      {userName: newUserName}
-    ]
-  })
-
-}
 
 userNameChangedHandler = (event) =>{
   this.setState({
