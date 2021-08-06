@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
+import styled from 'styled-components';
 import Person from './Person/Person';
+
+const Styledbutton = styled.button`
+  background-color: green; 
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+`
+;
+
 
 class App extends Component{
 
@@ -67,13 +84,7 @@ togglePersonsHandler = () =>{
 
 render() {
 
-  const style = {
-    backgroundColor: 'white', 
-    font: 'inherit', 
-    border: '1px solid blue', 
-    padding: '8px',
-    cursor: 'pointer'
-  }
+  
 
   let persons = null;
 
@@ -89,21 +100,37 @@ render() {
                     changed = {(event) => this.nameChangedHandler(event, person.id)}
                    />
         })}
+        
       </div>
     );
+    /*style.backgroundColor = 'red'
+    style[':hover'] = {
+      backgroundColor: 'salmon',
+      color: 'black'
+    }*/
+  }
+
+  let classes = [];
+
+  if(this.state.persons.length <= 2) {
+    classes.push('red');
+  }
+  if(this.state.persons.length <= 1) {
+    classes.push('bold');
   }
 
 return (
+ 
     <div className="App">
       <h1>Hi, I am react App</h1>
-      <button 
-        style = {style}
-        onClick={this.togglePersonsHandler}>
-        Switch Name</button>
+      <p className={classes.join(' ')}>Is this working?</p>
+      <Styledbutton  onClick={this.togglePersonsHandler}>
+        Show Names</Styledbutton>
 
         {persons}  
 
     </div>
+    
   );
 }
 }
@@ -111,4 +138,4 @@ return (
 
 
 
-export default App;
+export default App ;
