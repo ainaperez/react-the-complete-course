@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './App.module.css';
+import classes from './App.css';
 
 import Person from './Person/Person';
 
@@ -90,7 +90,7 @@ render() {
       </div>
     );
     
-    btnClass.push(classes.Red)
+    btnClass.push(classes.Red);
     
     /*style.backgroundColor = 'red'
     style[':hover'] = {
@@ -110,10 +110,10 @@ render() {
 
 return (
  
-    <div className="App">
+    <div className={classes.App}>
       <h1>Hi, I am react App</h1>
-      <p className={classes.join(' ')}>Is this working?</p>
-      
+      <p className={assignedClasses.join(' ')}>Is this working?</p>
+    
       <button className ={btnClass.join(' ')} onClick={this.togglePersonsHandler}>
         Show Names</button>
 

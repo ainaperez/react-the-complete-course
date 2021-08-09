@@ -24,6 +24,13 @@
     color: black;
   }
 
+  .button.Red{
+    background-color: red;
+  }
+  .button.Red:hover{
+    background-color: salmon;
+  }
+
   /*<Styledbutton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>
   Show Names</Styledbutton>*/
 
