@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.module.css';
 
 import Person from './Person/Person';
 
@@ -71,9 +71,8 @@ togglePersonsHandler = () =>{
 
 render() {
 
-  
-
   let persons = null;
+  let btnClass = [classes.button];
 
   if(this.state.showPersons){
     persons = (
@@ -90,6 +89,9 @@ render() {
         
       </div>
     );
+    
+    btnClass.push(classes.Red)
+    
     /*style.backgroundColor = 'red'
     style[':hover'] = {
       backgroundColor: 'salmon',
@@ -97,13 +99,13 @@ render() {
     }*/
   }
 
-  let classes = [];
+  let assignedClasses = [];
 
   if(this.state.persons.length <= 2) {
-    classes.push('red');
+    assignedClasses.push(classes.red);
   }
   if(this.state.persons.length <= 1) {
-    classes.push('bold');
+    assignedClasses.push(classes.bold);
   }
 
 return (
@@ -112,7 +114,7 @@ return (
       <h1>Hi, I am react App</h1>
       <p className={classes.join(' ')}>Is this working?</p>
       
-      <button onClick={this.togglePersonsHandler}>
+      <button className ={btnClass.join(' ')} onClick={this.togglePersonsHandler}>
         Show Names</button>
 
         {persons}  
