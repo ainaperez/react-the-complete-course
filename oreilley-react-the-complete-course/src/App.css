@@ -10,3 +10,20 @@
   font-weight: bold;
 }
 
+.button{
+  background-color: green; /*${props => props.alt ? 'red': 'green'};*/
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+    background-color: lightgreen;/*${props => props.alt ? 'salmon': 'lightgreen'}*/;
+    color: black;
+  }
+
+  /*<Styledbutton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>
+  Show Names</Styledbutton>*/
+
