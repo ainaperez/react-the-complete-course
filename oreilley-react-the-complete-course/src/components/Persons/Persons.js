@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
-import Person from './Person/Person'
+import Person from './Person/Person';
+
 
 class Persons extends PureComponent{
 
@@ -36,7 +37,7 @@ componentWillUnmount(){
 
 render(){
     
-        console.log('[Persons.js] rendering...');
+    console.log('[Persons.js] rendering...');
     
     return this.props.persons.map((person, index) => {
                 return <Person 
@@ -44,10 +45,9 @@ render(){
                         name = {person.name}
                         age = {person.age}
                         key = {person.id}
-                        changed = {(event) => this.props.changed(event, person.id)}
-                        />
-            });
-            } 
+                        changed = {(event) => this.props.changed(event, person.id)} />
+            });}
+           
     }
           
 export default Persons;     
