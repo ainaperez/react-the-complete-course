@@ -2,35 +2,5 @@
   text-align: center;
 }
 
-.red{
-  color: red;
-}
 
-.bold{
-  font-weight: bold;
-}
-
-.button{
-  background-color: green; /*${props => props.alt ? 'red': 'green'};*/
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.button:hover {
-    background-color: lightgreen;/*${props => props.alt ? 'salmon': 'lightgreen'}*/;
-    color: black;
-  }
-
-  .button.Red{
-    background-color: red;
-  }
-  .button.Red:hover{
-    background-color: salmon;
-  }
-
-  /*<Styledbutton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>
-  Show Names</Styledbutton>*/
 
